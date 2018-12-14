@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <Button
+        android:text="@string/enter_test_btn_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_manual_test"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp" />
+    <Button
+        android:text="@string/enter_auto_test_btn_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_auto_test"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp" />
+    <Button
+        android:text="@string/enter_develop_test_btn_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_develop_test"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp" />
+    <Button
+        android:text="@string/back_btn_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_back"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp" />
+</LinearLayout>

@@ -1,0 +1,3 @@
+<merge>
+    <include layout="@layout/activity_fragment_example1_wide"></include>
+</merge>

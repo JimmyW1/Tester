@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.test.ui.activities.other.test_tools.study.demon.fragments.first_example.FragmentExample1Activity">
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="com.test.ui.activities.other.test_tools.study.demon.fragments.first_example.BookTitleFragment"
+        android:id="@+id/fragmentTitles">
+    </fragment>
+     <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="com.test.ui.activities.other.test_tools.study.demon.fragments.first_example.BookDescriptionFragment"
+        android:id="@+id/fragmentDescriptions">
+    </fragment>
+
+</LinearLayout>

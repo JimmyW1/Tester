@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--<item android:title="@string/toolbar_setting"-->
+        <!--android:id="@+id/toolbar_setting"-->
+        <!--android:orderInCategory="100"-->
+        <!--app:showAsAction="never"/>-->
+
+    <!--<item android:title="@string/toolbar_share"-->
+        <!--android:id="@+id/toolbar_share"-->
+        <!--android:icon="@mipmap/ab_share"-->
+        <!--app:showAsAction="never"/>-->
+
+    <item android:title="@string/toolbar_edit"
+        android:id="@+id/toolbar_edit"
+        android:icon="@mipmap/ab_edit"
+        app:actionProviderClass="com.test.ui.activities.other.test_tools.study.demon.MyActionBarMenu"
+        app:showAsAction="never"/>
+</menu>

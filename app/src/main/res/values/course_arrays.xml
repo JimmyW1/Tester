@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="book_titles">
+        <item>1111111111111111111111</item>
+        <item>2222222222222222222222</item>
+        <item>3333333333333333333333</item>
+        <item>4444444444444444444444</item>
+        <item>5555555555555555555555</item>
+        <item>6666666666666666666666</item>
+    </string-array>
+    
+    <string-array name="book_descs">
+        <item>desc_1111111111111111111111</item>
+        <item>desc_2222222222222222222222</item>
+        <item>desc_3333333333333333333333</item>
+        <item>desc_4444444444444444444444</item>
+        <item>desc_5555555555555555555555</item>
+        <item>desc_6666666666666666666666</item>
+    </string-array>
+</resources>

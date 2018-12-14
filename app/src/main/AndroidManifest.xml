@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.test.ui.activities">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    /* j300 test need below permissions */
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BEEPER" />
+    <uses-permission android:name="android.permission.LED" />
+    <uses-permission android:name="android.permission.SERIALPORT" />
+    <uses-permission android:name="android.permission.SCANNER" />
+    <uses-permission android:name="android.permission.MAGCARDREADER" />
+    <uses-permission android:name="android.permission.INSERTCARDREADER" />
+    <uses-permission android:name="android.permission.PINPAD" />
+    <uses-permission android:name="android.permission.RFCARDREADER" />
+    <uses-permission android:name="android.permission.PRINTER" />
+    <uses-permission android:name="android.permission.PBOC" />
+    <uses-permission android:name="android.permission.DEVICEINFO" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        //
+        <!-- android:theme="@style/Theme.AppCompat.Light.NoActionBar"> -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="verifone.appstore.ENTRY" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SelectActivity" />
+        <activity android:name=".manual_test.ManualTestActivity" />
+        <activity android:name=".auto_test.AutoTestActivity" />
+        <activity android:name=".developer_test.boc_developer.BocDeveloperTestActivity" />
+        <activity android:name=".manual_test.CasePageActivity" />
+        <activity android:name=".other.setting.SettingsActivity" />
+        <activity android:name=".other.test_result.ShowTestResultActivity" />
+        <activity android:name=".other.test_result.ResultDetailActivity" />
+        <activity android:name=".auto_test.ShowTestProcessActivity" />
+        <activity android:name=".other.test_tools.ncca_test.NCCAAlgorithmTestctivity" />
+        <activity android:name=".other.test_tools.j300_test.J300TestActivity" />
+        <activity android:name=".other.test_tools.TestToolsActivity" />
+        <activity android:name=".other.test_tools.ncca_test.NCCAPerformanceActivity" />
+        <activity android:name=".other.test_tools.ncca_test.NCCATestActivity" />
+        <activity android:name=".other.test_tools.ncca_test.NCCASSLTestActivity" />
+        <activity android:name=".other.test_tools.ncca_test.NCCALoadTEKActivity" />
+        <activity android:name=".other.test_tools.study.StudyTestActivity" />
+        <activity android:name=".other.test_tools.study.TestOnMeasureOnlayActivity" />
+        <activity android:name=".other.test_tools.study.TestSelfViewPager" />
+        <activity android:name=".other.test_tools.study.TestScrollCollision1Activity" />
+        <activity android:name=".other.test_tools.study.TestScrollCollision2Activity" />
+        <activity android:name=".other.test_tools.study.TestMyCircleViewActivity" />
+        <activity android:name=".other.test_tools.study.remote_view.TestNotificationActivity" />
+        <activity android:name=".other.test_tools.study.animation.AnimationTest1Activity" />
+        <activity android:name=".other.test_tools.study.TestMyTestViewActivity" />
+        <activity android:name=".other.test_tools.study.demon.toolbar.ToolBarDemonActivity" />
+        <activity android:name=".other.test_tools.study.demon.fragments.first_example.FragmentExample1Activity" />
+        <activity
+            android:name=".other.test_tools.study.demon.fragments.tabactivity.TabActivityExample"
+            android:label="@string/title_activity_tab_example"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".other.test_tools.study.demon.fragments.navigationDrawerActivity.NavigationDrawerActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".other.test_tools.study.demon.rxjava.RxJavaTestActivity" />
+        <activity android:name=".other.test_tools.scb_qr_scan.QRScanActivity"></activity>
+    </application>
+
+</manifest>

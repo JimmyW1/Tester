@@ -1,0 +1,50 @@
+<resources>
+
+    <!--为Toolbar准备的样式-->
+    <style name="AppTheme" parent="AppTheme.Base">
+
+    </style>
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <!--为Toolbar准备的样式-->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!--&lt;!&ndash;Status bar color&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="colorPrimaryDark">@color/accent_material_light</item>&ndash;&gt;-->
+        <!--<item name="colorPrimaryDark">@color/red</item>-->
+
+        <!--&lt;!&ndash;&lt;!&ndash; Actionbar color &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="colorPrimary">@color/accent_material_dark</item>&ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/blue</item>-->
+
+        <!--&lt;!&ndash;&lt;!&ndash;Window color&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:windowBackground">@color/dim_foreground_material_dark</item>&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@color/green</item>-->
+
+
+        <item name="colorPrimary">@color/accent_material_dark</item>
+        <item name="colorPrimaryDark">@color/accent_material_light</item>
+        <item name="android:windowBackground">@color/dim_foreground_material_dark</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

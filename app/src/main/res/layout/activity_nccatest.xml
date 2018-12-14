@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.test.ui.activities.other.test_tools.ncca_test.NCCATestActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ncca_alg_test"
+        android:padding="0dp"
+        android:text="@string/developer_ncca_algorithm_test"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ncca_perf_test"
+        android:padding="0dp"
+        android:text="@string/developer_ncca_usb_performance_test"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ncca_wifi_perf_test"
+        android:padding="0dp"
+        android:text="@string/developer_ncca_wifi_performance_test"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ncca_ssl_test"
+        android:padding="0dp"
+        android:text="@string/developer_ncca_ssl_connect_test"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp" />
+    <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/btn_ncca_simulation_test"
+    android:padding="0dp"
+    android:text="@string/developer_ncca_simulate_transfer_test"
+    android:textSize="30sp"
+    android:textAllCaps="false"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:layout_marginTop="5dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ncca_cert_chain_test"
+        android:padding="0dp"
+        android:text="@string/developer_ncca_cert_chain_test"
+        android:textSize="30sp"
+        android:textAllCaps="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="5dp" />
+
+</LinearLayout>

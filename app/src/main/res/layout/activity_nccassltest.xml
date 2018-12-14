@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.ui.activities.other.test_tools.ncca_test.NCCASSLTestActivity"
+    >
+
+    <EditText
+        android:id="@+id/et_ncca_ssl_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="161dp"
+        android:hint="请输入IP地址"
+        android:gravity="center"
+        android:ems="10"
+        android:inputType="textAutoComplete" />
+
+    <EditText
+        android:id="@+id/et_ncca_ssl_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_ncca_ssl_ip"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="请输入端口号"
+        android:gravity="center"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_ssl_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_ncca_ssl_port"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="连接服务器" />
+</RelativeLayout>

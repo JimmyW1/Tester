@@ -1,0 +1,185 @@
+<resources>
+    <string name="app_name">ServiceTester</string>
+
+    <string name="boc_test">中行测试</string>
+    <string name="icbc_test">工行测试</string>
+    <string name="adc_test">农行测试</string>
+    <string name="cbc_test">建行测试</string>
+    <string name="ums_test">银商测试</string>
+    <string name="rk_test">RK测试</string>
+    <string name="test_tools">测试工具</string>
+
+    <string name="error_tip">错误提示</string>
+    <string name="accesser_error">ServiceAccesser未正确设置，请查看相应代码</string>
+    <string name="error_module_not_extends">测试模块类未继承BaseModule类</string>
+    <string name="bind_service_success">绑定成功</string>
+    <string name="bind_service_failed">绑定失败</string>
+
+    <string name="bind_btn_title">绑定服务</string>
+    <string name="unbind_btn_title">解绑服务</string>
+    <string name="back_btn_title">返回上一层</string>
+
+    <string name="enter_test_btn_title">进入手动测试</string>
+    <string name="enter_auto_test_btn_title">进入自动测试</string>
+    <string name="enter_develop_test_btn_title">进入开发者测试</string>
+
+    <string name="dev_info">设备信息模块</string>
+    <string name="pinpad">Pinpad模块</string>
+    <string name="pboc">PBOC模块</string>
+    <string name="printer">打印模块</string>
+    <string name="iccard">ICCard模块</string>
+    <string name="rfcard">RFCard模块</string>
+    <string name="scanner">扫描模块</string>
+    <string name="beeper">蜂鸣器模块</string>
+    <string name="led">LED灯模块</string>
+    <string name="terminal_manage">终端管理模块</string>
+    <string name="swiper">磁道数据模块</string>
+    <string name="cardreader">读卡器模块</string>
+    <string name="deviceservice">设备服务模块</string>
+    <string name="externserial">底座模块</string>
+
+    <string name="auto_dev_info">开始设备信息测试</string>
+    <string name="auto_pinpad">开始Pinpad测试</string>
+    <string name="auto_pboc">开始PBOC测试</string>
+    <string name="auto_printer">开始打印测试</string>
+    <string name="auto_iccard">开始ICCard测试</string>
+    <string name="auto_rfcard">开始RFCard测试</string>
+    <string name="auto_scanner">开始扫描测试</string>
+    <string name="auto_beeper">开始蜂鸣器测试</string>
+    <string name="auto_led">开始LED灯测试</string>
+    <string name="auto_terminal_manage">开始终端管理测试</string>
+    <string name="auto_swiper">开始磁道数据测试</string>
+    <string name="auto_cardreader">开始读卡器测试</string>
+    <string name="auto_deviceservice">开始设备服务模块测试</string>
+    <string name="auto_all">开始所有测试</string>
+    <string name="auto_externserial">开始底座模块</string>
+
+    <string name="develop_pboc">PBOC开发者测试入口</string>
+
+
+    <string name="positive_btn">是</string>
+    <string name="negative_btn">否</string>
+
+    <string name="overflow_settings">设置</string>
+    <string name="overflow_update">检查更新</string>
+    <string name="overflow_about">关于...</string>
+
+    <string name="setting_save">保存设置</string>
+    <string name="setting_cancel">取消设置</string>
+    <string name="setting_visablelevel">用例可视等级</string>
+
+    <string name="btn_success">成功</string>
+    <string name="btn_failed">失败</string>
+
+    <string name="case_begin">开始执行案例</string>
+    <string name="case_end">案例执行结束</string>
+    <string name="case_select">这是一个需要人工判断结果的案例，请选择结果</string>
+    <string name="case_result_success">案例执行成功</string>
+    <string name="case_result_failed">案例执行失败</string>
+
+    <string name="textview_case_result_total">测试案例总量:</string>
+    <string name="textview_case_result_success">成功案例:</string>
+    <string name="textview_case_result_failed">失败案例:</string>
+    <string name="textview_case_result_no_test">未测试案例:</string>
+    <string name="textview_case_result_no_select">未选结果案例:</string>
+
+    <string name="btn_check_detail">查看详情</string>
+
+    <string name="dialog_show_result_msg">是否查看测试结果?</string>
+    <string name="content_null">内容为空!!</string>
+
+    <string name="print">打印此页</string>
+    <string name="print_no_content">没有打印内容</string>
+    <string name="print_no_paper">打印缺纸/忙</string>
+    <string name="print_error">打印机故障</string>
+
+    <string name="auto_test_btn_check_result">查看测试结果</string>
+    <string name="auto_test_btn_continue_manual_test">测试非自动化案例</string>
+
+    <string name="unrealized">未实现</string>
+
+    <string name="developer_ncca_test">NCCA测试</string>
+    <string name="developer_pboc_test">PBOC测试</string>
+    <string name="developer_j300_test">J300测试</string>
+    <string name="developer_study_test">练习测试</string>
+
+
+    <string name="developer_ncca_algorithm_test">算法正确性测试</string>
+    <string name="developer_ncca_usb_performance_test">USB性能测试</string>
+    <string name="developer_ncca_wifi_performance_test">WIFI性能测试</string>
+    <string name="developer_ncca_ssl_connect_test">ssl连接测试</string>
+    <string name="developer_ncca_simulate_transfer_test">模拟下载TEK</string>
+    <string name="developer_ncca_cert_chain_test">证书链验证测试</string>
+
+    <string name="developer_sm2_encrypt">加密</string>
+    <string name="developer_sm2_decrypt">解密</string>
+    <string name="developer_sm2_gen_keypairs">产生密钥对</string>
+    <string name="developer_sm2_no_pre">无预处理</string>
+    <string name="developer_sm2_pre">有预处理</string>
+    <string name="developer_sm2_sign">签名</string>
+    <string name="developer_sm2_verify">验签</string>
+
+    <string name="developer_sm3_mac_verify">杂凑验证</string>
+
+    <string name="developer_sm4_mac_verify">MAC验证</string>
+    <string name="developer_sm4_cbc_encrypt">CBC加密</string>
+    <string name="developer_sm4_cbc_decrypt">CBC解密</string>
+    <string name="developer_sm4_ecb_encrypt">ECB加密</string>
+    <string name="developer_sm4_ecb_decrypt">ECB解密</string>
+
+    <string name="developer_rsa_encrypt">加密</string>
+    <string name="developer_rsa_decrypt">解密</string>
+    <string name="developer_rsa_sign">签名</string>
+    <string name="developer_rsa_verify">验签</string>
+
+    <string name="developer_random">随机数</string>
+    <string name="developer_gen_random">产生随机数</string>
+
+    <string name="developer_other">其他</string>
+    <string name="developer_other_performance">性能测试</string>
+    <string name="developer_other_gen_128M_random">产生128M随机数</string>
+    <string name="btn_perform_sm2_encrypt_decrypt_1">SM2加解密1</string>
+    <string name="btn_perform_sm2_encrypt_decrypt_2">SM2加解密2</string>
+    <string name="btn_perform_sm2_encrypt_decrypt_3">SM2加解密3</string>
+    <string name="btn_perform_sm2_gen_keypairs_1">SM2生成密钥对1</string>
+    <string name="btn_perform_sm2_gen_keypairs_2">SM2生成密钥对2</string>
+    <string name="btn_perform_sm2_gen_keypairs_3">SM2生成密钥对3</string>
+    <string name="btn_perform_sm2_sign_verify_1">SM2签名验签1</string>
+    <string name="btn_perform_sm2_sign_verify_2">SM2签名验签2</string>
+    <string name="btn_perform_sm2_sign_verify_3">SM2签名验签3</string>
+    <string name="btn_perform_sm3_hash_1">SM3杂凑1</string>
+    <string name="btn_perform_sm3_hash_2">SM3杂凑2</string>
+    <string name="btn_perform_sm3_hash_3">SM3杂凑3</string>
+    <string name="btn_perform_sm4_cbc_1">SM4_CBC1</string>
+    <string name="btn_perform_sm4_cbc_2">SM4_CBC2</string>
+    <string name="btn_perform_sm4_cbc_3">SM4_CBC3</string>
+    <string name="btn_perform_sm4_ecb_1">SM4_ECB1</string>
+    <string name="btn_perform_sm4_ecb_2">SM4_ECB2</string>
+    <string name="btn_perform_sm4_ecb_3">SM4_ECB3</string>
+
+    <string name="btn_j300_pinpad">密码键盘测试</string>
+    <string name="btn_j300_scan">密码扫码测试</string>
+    <string name="btn_j300_ctls">密码非接测试</string>
+    <string name="btn_j300_signboard">密码签名板测试</string>
+
+    <string name="test_result">测试结果:</string>
+
+    <string name="toolbar_setting">设置</string>
+    <string name="toolbar_share">分享</string>
+    <string name="toolbar_edit">编辑</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dynamicUiTitle">11111111111111111</string>
+    <string name="android4NewTitle">222222222222222</string>
+    <string name="dynamicUiDescription">3333333333</string>
+    <string name="title_activity_tab_example">TabActivityExample</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="scb_qr_scan">SCB_QR_SCAN</string>
+    <string name="pay">Pay</string>
+</resources>

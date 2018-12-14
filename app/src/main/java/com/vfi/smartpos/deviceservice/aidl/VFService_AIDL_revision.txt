@@ -1,0 +1,98 @@
+version 1.6.4.1
+更新测试版本sdk，解决AES分段加解密错误的问题
+
+version 1.6.4.0
+service修改IEMV、emvHandle部分接口
+
+version 1.6.3.1
+扫码采用最大分辨率1920 X 1080
+
+version 1.6.2.1
+增加打印图片灰度设置
+修改一部分注解说明
+
+version 1.6.2.0
+添加主密钥、工作密钥AES CBC算法接口
+
+version 1.6.1.1
+添加工作密钥加解密接口
+
+version 1.6.1.0
+合并泰国、柬埔寨分支改动到develop，并更新sdk（20181031）
+
+version 1.6.0.2
+增加获取tamper code接口
+
+version 1.6.0.1
+修正3des加解密CBC模式计算出错的bug
+
+version 1.6.0.0
+添加device对象的权限检查功能
+
+version 1.5.5.0
+pboc2emv
+
+version 1.5.4.4
+增加获取MEID接口
+
+version 1.5.4.3
+增加系统信息若干接口
+version 1.5.4.2
+接触卡片在卡号确认时不做aid白名单校验
+
+version 1.5.4.1
+添加应用选择返回aid还是应用名称的选项
+
+version 1.5.4.0
+解决柬埔寨银行自己的卡，aid不支持的问题，添加了对AMEX卡的支持
+
+version 1.5.3.11
+解决泰国DCC在pobc流程中打印造成密码键盘异常的问题
+
+version 1.5.3.10
+更新emvl2.so 解决获取9f53失败的问题
+
+version 1.5.3.9
+startPboc添加货币代码5F2A设置选项
+
+version 1.5.3.8
+非接库版本ctls_lib 01.00.39
+MK DF8118的签名，联机PIN指示bit根据cap设置，其他bit为0;
+
+version 1.5.3.7
+非接库版本ctls_lib 01.00.38
+VK恢复为01.00.32版本(密文17);
+
+version 1.5.3.6
+非接库版本ctls_lib 01.00.37
+支持磁条非接卡
+
+version 1.5.3.5
+非接库版本ctls_lib 01.00.36
+MK MS mode随机数(9F6A)转换为BCD码
+
+version 1.5.3.4
+非接添加对9F1D的处理
+
+version 1.5.2.4
+pboc transType添加对CASH的处理
+
+version 1.5.2.3
+添加对ic卡fallback的处理
+
+version 1.5.2.2
+联机失败后转脱机批准
+
+version 1.5.2.1
+更新emvL2.so解决JCB应用锁定后内核返回来的错误信息不正确的问题
+更新非接库，添加release版本屏蔽内核日志功能
+去除自动恢复aid和rid的功能
+
+version 1.5.2.0
+添加密码键盘0~9顺序显示功能
+
+version 1.5.1.0
+增加pboc退货（全流程）选项
+
+version 1.4.0
+添加计算pinblock功能

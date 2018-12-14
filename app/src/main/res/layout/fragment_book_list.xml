@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.ui.activities.other.test_tools.study.demon.fragments.first_example.BookListFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollTitles" >
+        <RadioGroup
+            android:id="@+id/bookSelectGroup"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <RadioButton
+                android:id="@+id/dynamicUiBook"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/dynamicUiTitle"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/android4NewBook"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/android4NewTitle"/>
+        </RadioGroup>
+    </ScrollView>
+</FrameLayout>

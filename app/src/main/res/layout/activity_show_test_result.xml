@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/case_result_total"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginLeft="40dp"
+            android:text="@string/textview_case_result_total" />
+
+        <TextView
+            android:id="@+id/num_total"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btn_check_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginRight="20dp"
+            android:text="@string/btn_check_detail" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/case_result_success"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginLeft="40dp"
+            android:text="@string/textview_case_result_success" />
+
+        <TextView
+            android:id="@+id/num_success"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btn_check_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginRight="20dp"
+            android:text="@string/btn_check_detail" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/case_result_fail"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginLeft="40dp"
+            android:text="@string/textview_case_result_failed" />
+
+        <TextView
+            android:id="@+id/num_fail"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btn_check_fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginRight="20dp"
+            android:text="@string/btn_check_detail" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/case_result_no_select"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginLeft="40dp"
+            android:text="@string/textview_case_result_no_select" />
+
+        <TextView
+            android:id="@+id/num_no_select"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btn_check_no_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginRight="20dp"
+            android:text="@string/btn_check_detail" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/case_result_not_test"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginLeft="40dp"
+            android:text="@string/textview_case_result_no_test" />
+
+        <TextView
+            android:id="@+id/num_no_test"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btn_check_no_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginRight="20dp"
+            android:text="@string/btn_check_detail" />
+    </LinearLayout>
+</LinearLayout>

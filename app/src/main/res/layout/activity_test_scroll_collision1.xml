@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.ui.activities.other.test_tools.study.TestScrollCollision1Activity">
+
+    <com.test.ui.activities.other.test_tools.study.self_views.MySelfViewPager
+        android:id="@+id/myselfviewpager_study"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+        <com.test.ui.activities.other.test_tools.study.self_views.MyListView
+            android:id="@+id/listview_study_collision1"
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.test.ui.activities.other.test_tools.study.self_views.MyListView
+            android:id="@+id/listview_study_collision2"
+            android:background="@color/red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.test.ui.activities.other.test_tools.study.self_views.MyListView
+            android:id="@+id/listview_study_collision3"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.test.ui.activities.other.test_tools.study.self_views.MySelfViewPager>
+
+
+
+</FrameLayout>
