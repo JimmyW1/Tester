@@ -104,6 +104,21 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrscan);
         initView();
+
+        // 自动生成QR二维码，5秒钟生成一次
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    doHttpPostUpdateQRBitmap();
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 
     private void initView() {
@@ -136,6 +151,8 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         btn_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 if (et_url.getText() == null || et_url.getText().length() == 0) {
                     ToastUtil.showLong("Please input url.");
                     return;
@@ -217,6 +234,7 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         String url = et_url.getText().toString() + "/" + URL_TAIL_UPDATE_QR;
         LogUtil.d(TAG, "url=[" + url + "]");
         FormBody formBody = new FormBody.Builder()
+                .add("qrId", qrcodeContent)
                 .add("qrCode", qrCodeBase64)
                 .build();
 //        String json = "{\"qrCode\":\"" + qrCodeBase64 + "\"}";
@@ -306,12 +324,7 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
             e.printStackTrace();
         }
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                doHttpPostUpdateQRBitmap();
-            }
-        }).start();
+
     }
 
     private String getJsonDataByType(int type) {

@@ -9,7 +9,6 @@
     <EditText
         android:id="@+id/et_url"
         android:hint="http://xxx.xxx.xxx.xxx:port"
-        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <RadioGroup

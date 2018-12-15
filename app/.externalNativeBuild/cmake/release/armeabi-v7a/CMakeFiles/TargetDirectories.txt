@@ -1,3 +1,3 @@
-D:/VMware_Share_Files/Android_root/ServiceTester/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/native-lib.dir
-D:/VMware_Share_Files/Android_root/ServiceTester/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
-D:/VMware_Share_Files/Android_root/ServiceTester/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+D:/0_Work_Home/GitRoot/Tester/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/native-lib.dir
+D:/0_Work_Home/GitRoot/Tester/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/0_Work_Home/GitRoot/Tester/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir

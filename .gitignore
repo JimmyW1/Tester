@@ -1,0 +1,9 @@
+*.iml
+.gradle
+/local.properties
+/.idea/*
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/presentation/src/main/java/com/verifone/adc/presentation/model/print/builder
