@@ -45,6 +45,7 @@ import okhttp3.Response;
 public class QRScanActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener {
     private final String TAG = this.getClass().getSimpleName();
     Button btn_pay;
+    Button btn_scan;
     LinearLayout ll_thaiQR;
     LinearLayout ll_QRCS;
     LinearLayout ll_wechat;
@@ -147,20 +148,10 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         et_url = (EditText) findViewById(R.id.et_url);
         et_url.setText(sharedPreferences.getString(KEY_URL, "http://10.172.28.78:8080"));
 
-        btn_pay = (Button) findViewById(R.id.pay);
-        btn_pay.setOnClickListener(new View.OnClickListener() {
+        btn_scan = (Button) findViewById(R.id.btn_scan);
+        btn_scan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
-
-                if (et_url.getText() == null || et_url.getText().length() == 0) {
-                    ToastUtil.showLong("Please input url.");
-                    return;
-                }
-
-                sharedPreferences = getSharedPreferences(SP_KEY, MODE_PRIVATE);
-                sharedPreferences.edit().putString(KEY_URL, et_url.getText().toString()).commit();
-
+            public void onClick(View view) {
                 if (vfiServiceAccesser.getServiceBinder() != null) {
                     deviceService = IDeviceService.Stub.asInterface(vfiServiceAccesser.getServiceBinder());
                     try {
@@ -172,14 +163,15 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
                         deviceService.getScanner(1).startScan(bundle, 60, new ScannerListener.Stub() {
                             @Override
                             public void onSuccess(String barcode) throws RemoteException {
-//                                ToastUtil.showLong("Scan success:" + barcode);
                                 scanResult = barcode;
-                                new Thread(new Runnable() {
+                                runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        doHttpPostSaveTransRecord();
+                                        btn_scan.setVisibility(View.GONE);
+                                        btn_pay.setVisibility(View.VISIBLE);
+                                        ToastUtil.showLong("Scan success:" + scanResult);
                                     }
-                                }).start();
+                                });
                             }
 
                             @Override
@@ -203,6 +195,32 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
                 } else {
                     ToastUtil.showLong("Service not bind, please retry for a while");
                 }
+            }
+        });
+
+        btn_pay = (Button) findViewById(R.id.pay);
+        btn_pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if (et_url.getText() == null || et_url.getText().length() == 0) {
+                    ToastUtil.showLong("Please input url.");
+                    return;
+                }
+
+                sharedPreferences = getSharedPreferences(SP_KEY, MODE_PRIVATE);
+                sharedPreferences.edit().putString(KEY_URL, et_url.getText().toString()).commit();
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        doHttpPostSaveTransRecord();
+                    }
+                }).start();
+
+                btn_scan.setVisibility(View.VISIBLE);
+                btn_pay.setVisibility(View.GONE);
             }
         });
     }

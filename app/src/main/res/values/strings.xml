@@ -182,4 +182,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="scb_qr_scan">SCB_QR_SCAN</string>
     <string name="pay">Pay</string>
+    <string name="scan">SCAN</string>
 </resources>

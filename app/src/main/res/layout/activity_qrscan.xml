@@ -167,8 +167,14 @@
         android:layout_weight="1">
     </LinearLayout>
     <Button
+        android:visibility="gone"
         android:id="@+id/pay"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:text="@string/pay"/>
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:text="@string/scan"/>
 </LinearLayout>
