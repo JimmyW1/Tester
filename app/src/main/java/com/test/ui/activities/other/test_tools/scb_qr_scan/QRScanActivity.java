@@ -13,8 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.test.logic.service_accesser.VFIServiceAccesser;
@@ -49,7 +51,9 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
     LinearLayout ll_thaiQR;
     LinearLayout ll_QRCS;
     LinearLayout ll_wechat;
+    LinearLayout ll_wechat_qr;
     LinearLayout ll_alipay;
+    LinearLayout ll_alipay_qr;
 
     EditText et_thaiqr_amount;
     EditText et_thaiqr_transId;
@@ -63,12 +67,22 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
     RadioButton rb_qrcs;
     RadioButton rb_wechat;
     RadioButton rb_alipay;
+    RadioButton rb_alipay_gen_qr;
+    RadioButton rb_wechat_gen_qr;
+
+    ImageView imageViewAlipay;
+    ImageView imageViewWechat;
+
+    TextView tv_alipay_qr_content;
+    TextView tv_wechat_qr_content;
 
     private int scanType = 0;
     private final int TYPE_THAIQR = 0;
     private final int TYPE_QRCS = 1;
     private final int TYPE_WECHAT = 2;
-    private final int TYPE_ALIPAY = 3;
+    private final int TYPE_WECHAT_GEN_QR = 3;
+    private final int TYPE_ALIPAY = 4;
+    private final int TYPE_ALIPAY_GEN_QR = 5;
     private VFIServiceAccesser vfiServiceAccesser;
     IDeviceService deviceService;
     String scanResult = "";
@@ -76,8 +90,14 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
     private static final String SP_KEY = "DATA";
     private static final String KEY_URL = "URL";
     private static final String KEY_QRCODE_NUM = "QRCODE_NUM";
+    private static final String KEY_ALIPAY_QRCODE_NUM = "ALIPAY_QRCODE_NUM";
+    private static final String KEY_ALIPAY_SCAN_QRCODE_NUM = "ALIPAY_SCAN_QRCODE_NUM";
+    private static final String KEY_WECHAT_QRCODE_NUM = "WECHAT_QRCODE_NUM";
+    private static final String KEY_WECHAT_SCAN_QRCODE_NUM = "WECHAT_SCAN_QRCODE_NUM";
     private final String URL_TAIL_SAVE_DATA = "saveData";
     private final String URL_TAIL_UPDATE_QR = "updateQR";
+    private final String URL_TAIL_UPDATE_ALIPAY_QR = "updateAlipayQR";
+    private final String URL_TAIL_UPDATE_WECHAT_QR = "updateWechatQR";
     private SharedPreferences sharedPreferences;
 
     @Override
@@ -131,11 +151,18 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         rb_wechat.setOnCheckedChangeListener(this);
         rb_alipay = (RadioButton) findViewById(R.id.rb_alipay);
         rb_alipay.setOnCheckedChangeListener(this);
+        rb_wechat_gen_qr = (RadioButton) findViewById(R.id.rb_wechat_qr);
+        rb_wechat_gen_qr.setOnCheckedChangeListener(this);
+        rb_alipay_gen_qr = (RadioButton) findViewById(R.id.rb_alipay_qr);
+        rb_alipay_gen_qr.setOnCheckedChangeListener(this);
 
         ll_thaiQR = (LinearLayout) findViewById(R.id.linear_ThaiQR);
         ll_QRCS = (LinearLayout) findViewById(R.id.linear_Qrcs);
         ll_wechat = (LinearLayout) findViewById(R.id.linear_Wechat);
+        ll_wechat_qr = (LinearLayout) findViewById(R.id.linear_Wechat_generate_qr);
+
         ll_alipay = (LinearLayout) findViewById(R.id.linear_Alipay);
+        ll_alipay_qr = (LinearLayout) findViewById(R.id.linear_Alipay_generate_qr);
 
         sharedPreferences = getSharedPreferences(SP_KEY, MODE_PRIVATE);
 
@@ -147,6 +174,12 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         et_qrcs_authorizeCode = (EditText) findViewById(R.id.qrcs_authorizeCode);
         et_url = (EditText) findViewById(R.id.et_url);
         et_url.setText(sharedPreferences.getString(KEY_URL, "http://10.172.28.78:8080"));
+
+        imageViewAlipay = (ImageView) findViewById(R.id.alipay_qr);
+        imageViewWechat = (ImageView) findViewById(R.id.wechat_qr);
+
+        tv_alipay_qr_content = (TextView) findViewById(R.id.alipay_qr_content);
+        tv_wechat_qr_content = (TextView) findViewById(R.id.wechat_qr_content);
 
         btn_scan = (Button) findViewById(R.id.btn_scan);
         btn_scan.setOnClickListener(new View.OnClickListener() {
@@ -228,37 +261,53 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
     private void doHttpPostUpdateQRBitmap() {
         sharedPreferences = getSharedPreferences(SP_KEY, MODE_PRIVATE);
         long qrcodeNum = sharedPreferences.getLong(KEY_QRCODE_NUM, 0);
+        long alipayScanQrcodeNum = sharedPreferences.getLong(KEY_ALIPAY_SCAN_QRCODE_NUM, 0);
+        long wechatScanQrcodeNum = sharedPreferences.getLong(KEY_WECHAT_SCAN_QRCODE_NUM, 0);
         LogUtil.d(TAG, "current qrcodeNum=" + qrcodeNum);
+        LogUtil.d(TAG, "current alipayQrcodeNum=" + alipayScanQrcodeNum);
+        LogUtil.d(TAG, "current wechatQrcodeNum=" + wechatScanQrcodeNum);
         String qrcodeContent = String.format("%012d", qrcodeNum);
+        String alipayQrcodeContent = String.format("%012d", alipayScanQrcodeNum);
+        String wechatQrcodeContent = String.format("%012d", wechatScanQrcodeNum);
         Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.qr_card);
+        Bitmap alipayLogo = BitmapFactory.decodeResource(getResources(), R.drawable.ic_alipay);
+        Bitmap wechatLogo = BitmapFactory.decodeResource(getResources(), R.drawable.ic_wechatpay);
         Bitmap qrCodeBitmap = QrCodeUtil.createQRImage(qrcodeContent, 500, 500, logo);
+        Bitmap alipayQrCodeBitmap = QrCodeUtil.createQRImage(alipayQrcodeContent, 500, 500, alipayLogo);
+        Bitmap wechatQrCodeBitmap = QrCodeUtil.createQRImage(wechatQrcodeContent, 500, 500, wechatLogo);
         String qrCodeBase64 = bitmapToBase64(qrCodeBitmap);
+        String alipayQrCodeBase64 = bitmapToBase64(alipayQrCodeBitmap);
+        String wechatQrCodeBase64 = bitmapToBase64(wechatQrCodeBitmap);
 
         qrcodeNum++;
+        alipayScanQrcodeNum++;
+        wechatScanQrcodeNum++;
         sharedPreferences.edit().putLong(KEY_QRCODE_NUM, qrcodeNum).commit();
+        sharedPreferences.edit().putLong(KEY_ALIPAY_SCAN_QRCODE_NUM, alipayScanQrcodeNum).commit();
+        sharedPreferences.edit().putLong(KEY_WECHAT_SCAN_QRCODE_NUM, wechatScanQrcodeNum).commit();
 
         LogUtil.d(TAG, "qrCodeBase64 len=" + qrCodeBase64.length());
+        LogUtil.d(TAG, "qrCodeBase64 len=" + alipayQrCodeBase64.length());
+        LogUtil.d(TAG, "qrCodeBase64 len=" + wechatQrCodeBase64.length());
 
         final MediaType JSON
                 = MediaType.parse("application/json; charset=utf-8");
 
-        OkHttpClient client = new OkHttpClient()
-                .newBuilder()
-                .readTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS)
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .build();
-
-        String url = et_url.getText().toString() + "/" + URL_TAIL_UPDATE_QR;
-        LogUtil.d(TAG, "url=[" + url + "]");
-        FormBody formBody = new FormBody.Builder()
-                .add("qrId", qrcodeContent)
-                .add("qrCode", qrCodeBase64)
-                .build();
-//        String json = "{\"qrCode\":\"" + qrCodeBase64 + "\"}";
-//        LogUtil.d(TAG, "json=[" + json + "]");
         try {
-//            RequestBody body = RequestBody.create(JSON, json);
+            OkHttpClient client = new OkHttpClient()
+                    .newBuilder()
+                    .readTimeout(10, TimeUnit.SECONDS)
+                    .writeTimeout(10, TimeUnit.SECONDS)
+                    .connectTimeout(10, TimeUnit.SECONDS)
+                    .build();
+
+            // ====================qrcs==========================================
+            String url = et_url.getText().toString() + "/" + URL_TAIL_UPDATE_QR;
+            LogUtil.d(TAG, "url=[" + url + "]");
+            FormBody formBody = new FormBody.Builder()
+                    .add("qrId", qrcodeContent)
+                    .add("qrCode", qrCodeBase64)
+                    .build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(formBody)
@@ -267,7 +316,7 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
             Response response = client.newCall(request).execute();
             String responseJson = response.body().string();
             LogUtil.d(TAG, "responseJson=" + responseJson);
-        } catch (IOException e) {
+       } catch (IOException e) {
             LogUtil.d(TAG, "=========update QR error==================");
             e.printStackTrace();
         }
@@ -308,17 +357,17 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         final MediaType JSON
                 = MediaType.parse("application/json; charset=utf-8");
 
-        OkHttpClient client = new OkHttpClient()
-                .newBuilder()
-                .readTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS)
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .build();
-
-        String url = et_url.getText().toString() + "/" + URL_TAIL_SAVE_DATA;
-        LogUtil.d(TAG, "url=[" + url + "]");
-        String json = getJsonDataByType(scanType);
         try {
+            OkHttpClient client = new OkHttpClient()
+                    .newBuilder()
+                    .readTimeout(10, TimeUnit.SECONDS)
+                    .writeTimeout(10, TimeUnit.SECONDS)
+                    .connectTimeout(10, TimeUnit.SECONDS)
+                    .build();
+
+            String url = et_url.getText().toString() + "/" + URL_TAIL_SAVE_DATA;
+            LogUtil.d(TAG, "url=[" + url + "]");
+            String json = getJsonDataByType(scanType);
             FormBody formBody = new FormBody.Builder()
                     .add("name", "android")
                     .add("price", "50")
@@ -391,7 +440,9 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
             ll_thaiQR.setVisibility(View.GONE);
             ll_QRCS.setVisibility(View.GONE);
             ll_wechat.setVisibility(View.GONE);
+            ll_wechat_qr.setVisibility(View.GONE);
             ll_alipay.setVisibility(View.GONE);
+            ll_alipay_qr.setVisibility(View.GONE);
             switch (buttonView.getId()) {
                 case R.id.rb_thaiqr:
                     scanType = TYPE_THAIQR;
@@ -409,8 +460,79 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
                     scanType = TYPE_ALIPAY;
                     ll_alipay.setVisibility(View.VISIBLE);
                     break;
+                case R.id.rb_wechat_qr:
+                    scanType = TYPE_WECHAT_GEN_QR;
+                    ll_wechat_qr.setVisibility(View.VISIBLE);
+                    showWechatQR();
+                    break;
+                case R.id.rb_alipay_qr:
+                    scanType = TYPE_ALIPAY_GEN_QR;
+                    ll_alipay_qr.setVisibility(View.VISIBLE);
+                    showAlipayQR();
+                    break;
             }
         }
         LogUtil.d(TAG, "scanType=" + scanType);
+    }
+
+    private void showAlipayQR() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (rb_alipay_gen_qr.isChecked()) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(SP_KEY, MODE_PRIVATE);
+                    long alipayQRNum = sharedPreferences.getLong(KEY_ALIPAY_QRCODE_NUM, 0);
+                    alipayQRNum += 1;
+                    final String alipayQrCodeContent = "ALIPAY" + String.format("%012d", alipayQRNum);
+                    Bitmap alipayLogo = BitmapFactory.decodeResource(getResources(), R.drawable.ic_alipay);
+                    final Bitmap alipayQR = QrCodeUtil.createQRImage(alipayQrCodeContent, 500, 500, alipayLogo);
+                    sharedPreferences.edit().putLong(KEY_ALIPAY_QRCODE_NUM, alipayQRNum).commit();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageViewAlipay.setImageBitmap(alipayQR);
+                            tv_alipay_qr_content.setText(alipayQrCodeContent);
+                        }
+                    });
+
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+    }
+
+    private void showWechatQR() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (rb_wechat_gen_qr.isChecked()) {
+                    SharedPreferences sharedPreferences = getSharedPreferences(SP_KEY, MODE_PRIVATE);
+                    long wechatQRNum = sharedPreferences.getLong(KEY_WECHAT_QRCODE_NUM, 0);
+                    wechatQRNum += 1;
+                    final String wechatQrCodeContent = "WECHAT" + String.format("%012d", wechatQRNum);
+                    Bitmap wechatLogo = BitmapFactory.decodeResource(getResources(), R.drawable.ic_wechatpay);
+                    final Bitmap wechatQR = QrCodeUtil.createQRImage(wechatQrCodeContent, 500, 500, wechatLogo);
+                    sharedPreferences.edit().putLong(KEY_WECHAT_QRCODE_NUM, wechatQRNum).commit();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            imageViewWechat.setImageBitmap(wechatQR);
+                            tv_wechat_qr_content.setText(wechatQrCodeContent);
+                        }
+                    });
+
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
     }
 }
