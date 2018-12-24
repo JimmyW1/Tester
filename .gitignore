@@ -5,5 +5,5 @@
 .DS_Store
 /build
 /captures
-.externalNativeBuild
+./app/.externalNativeBuild
 /presentation/src/main/java/com/verifone/adc/presentation/model/print/builder
