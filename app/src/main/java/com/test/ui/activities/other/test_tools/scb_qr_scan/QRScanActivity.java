@@ -100,6 +100,7 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
     private final String URL_TAIL_UPDATE_WECHAT_QR = "updateWechatQR";
     private SharedPreferences sharedPreferences;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -125,21 +126,6 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrscan);
         initView();
-
-        // 自动生成QR二维码，5秒钟生成一次
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    doHttpPostUpdateQRBitmap();
-                    try {
-                        Thread.sleep(5000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
     }
 
     private void initView() {
@@ -368,10 +354,6 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
             String url = et_url.getText().toString() + "/" + URL_TAIL_SAVE_DATA;
             LogUtil.d(TAG, "url=[" + url + "]");
             String json = getJsonDataByType(scanType);
-            FormBody formBody = new FormBody.Builder()
-                    .add("name", "android")
-                    .add("price", "50")
-                    .build();
             RequestBody body = RequestBody.create(JSON, json);
             Request request = new Request.Builder()
                     .url(url)
@@ -405,7 +387,6 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
             thaiQRData.setAmount(amount);
             thaiQRData.setTransid(transId);
             jsonStr = JSONObject.toJSONString(thaiQRData);
-            LogUtil.d(TAG, "jsonStr=[" + jsonStr + "]");
         } else if (type == TYPE_QRCS) {
             String amount = et_qrcs_amount.getText().toString();
             String transId = et_qrcs_transId.getText().toString();
@@ -419,16 +400,19 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
             qrcsData.setMerchantpan(merchantPan);
             qrcsData.setAuthorizecode(authorizeCode);
             jsonStr = JSONObject.toJSONString(qrcsData);
-            LogUtil.d(TAG, "jsonStr=[" + jsonStr + "]");
         } else if (type == TYPE_WECHAT) {
             WechatData wechatData = new WechatData();
             wechatData.setQrCode(scanResult);
             wechatData.setScanType("Wechat");
+            jsonStr = JSONObject.toJSONString(wechatData);
         } else if (type == TYPE_ALIPAY) {
             AlipayData alipayData = new AlipayData();
             alipayData.setQrCode(scanResult);
             alipayData.setScanType("Alipay");
+            jsonStr = JSONObject.toJSONString(alipayData);
         }
+
+        LogUtil.d(TAG, "Json=" + jsonStr);
 
         return jsonStr;
     }
