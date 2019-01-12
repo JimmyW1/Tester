@@ -1,3 +1,36 @@
+version 1.6.5
+service release版本正式释放
+
+version 1.6.4.10
+删除多余的k21文件
+
+version 1.6.4.9
+应用选择返回的应用名称HexString=》asciiString
+
+version 1.6.4.8
+修改tamper内部处理接口
+
+version 1.6.4.7
+更新正式版本SDK (smartpos_api_20181129b01)
+
+version 1.6.4.6
+1.添加打印无内容错误提示
+2.处理打印底层返回busy，回调不执行的问题
+
+version 1.6.4.5
+处理联机回调返回cmv是否签名为空造成的处理中断的bug
+
+version 1.6.4.4
+非接库Middleware01.00.41的修改“VK增加9F03的保存”是有问题的，会导致内核的认定此交易为cashback交易，流程会导致错误。
+
+version 1.6.4.3
+更新测试版本sdk（smartpos_api_20181129b01）
+扫码设置最大分辨率
+
+version 1.6.4.2
+更新正式版本sdk（smartpos_api_20181126b01）
+扫码取消设置分辨率1920X1080，等待sdk提供获取最大分辨率接口
+
 version 1.6.4.1
 更新测试版本sdk，解决AES分段加解密错误的问题
 

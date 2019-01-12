@@ -179,7 +179,7 @@ public class QRScanActivity extends BaseActivity implements CompoundButton.OnChe
                         bundle.putString("upPromptString", "");
                         bundle.putString("downPromptString", "");
                         scanResult = "";
-                        deviceService.getScanner(1).startScan(bundle, 60, new ScannerListener.Stub() {
+                        deviceService.getScanner(0).startScan(bundle, 60, new ScannerListener.Stub() {
                             @Override
                             public void onSuccess(String barcode) throws RemoteException {
                                 scanResult = barcode;

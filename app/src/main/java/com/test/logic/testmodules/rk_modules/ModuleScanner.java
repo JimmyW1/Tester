@@ -1,7 +1,6 @@
 package com.test.logic.testmodules.rk_modules;
 
 import android.os.Bundle;
-import android.os.IBinder;
 import android.os.RemoteException;
 
 import com.smartpos.deviceservice.aidl.IScanner;

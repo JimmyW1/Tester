@@ -20,6 +20,7 @@ interface IPrinter {
 	 * <ul>
 	 * <li>ERROR_NONE(0x00) - 状态正常</li>
 	 * <li>ERROR_PAPERENDED(0xF0) - 缺纸，不能打印</li>
+	 * <li>ERROR_NOCONTENT(0xF1) - 打印内存无内容</li>
      * <li>ERROR_HARDERR(0xF2) - 硬件错误</li>
      * <li>ERROR_OVERHEAT(0xF3) - 打印头过热</li>
      * <li>ERROR_BUFOVERFLOW(0xF5) - 缓冲模式下所操作的位置超出范围 </li>
@@ -43,6 +44,7 @@ interface IPrinter {
 	 * <ul>
 	 * <li>ERROR_NONE(0x00) - normal</li>
 	 * <li>ERROR_PAPERENDED(0xF0) - Paper out</li>
+	 * <li>ERROR_NOCONTENT(0xF1) - no content</li>
      * <li>ERROR_HARDERR(0xF2) - printer error</li>
      * <li>ERROR_OVERHEAT(0xF3) - over heat</li>
      * <li>ERROR_BUFOVERFLOW(0xF5) - buffer overflow</li>

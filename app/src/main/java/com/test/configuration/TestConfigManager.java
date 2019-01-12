@@ -92,6 +92,9 @@ public class TestConfigManager {
 
         servAccessUICfg.addUIConfig("RKServiceAccesser", R.string.rk_test);
         servAccessUICfg.addPackagePath("RKServiceAccesser", "com.test.logic.testmodules.rk_modules");
+
+        servAccessUICfg.addUIConfig("VFIServiceAccesser", R.string.vfi_test);
+        servAccessUICfg.addPackagePath("VFIServiceAccesser", "com.test.logic.testmodules.vfi_modules");
     }
 
     private void addDefaultServiceAccesserPackagePath() {

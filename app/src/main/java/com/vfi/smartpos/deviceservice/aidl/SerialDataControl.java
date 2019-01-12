@@ -40,7 +40,7 @@ public class SerialDataControl implements Parcelable {
         this.serialParity = in.readInt();
     }
 
-    public static final Creator<SerialDataControl> CREATOR = new Creator<SerialDataControl>() {
+    public static final Parcelable.Creator<SerialDataControl> CREATOR = new Parcelable.Creator<SerialDataControl>() {
         public SerialDataControl createFromParcel(Parcel source) {
             return new SerialDataControl(source);
         }

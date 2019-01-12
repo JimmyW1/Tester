@@ -7,6 +7,7 @@
     <string name="cbc_test">建行测试</string>
     <string name="ums_test">银商测试</string>
     <string name="rk_test">RK测试</string>
+    <string name="vfi_test">VFI测试</string>
     <string name="test_tools">测试工具</string>
 
     <string name="error_tip">错误提示</string>
