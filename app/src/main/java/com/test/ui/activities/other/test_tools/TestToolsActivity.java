@@ -131,15 +131,15 @@ public class TestToolsActivity extends BaseActivity implements View.OnClickListe
 
                     XmlParser xmlParser = new XmlParser();
                     EmvApplicationsConfigParser emvAppConfigParser = new EmvApplicationsConfigParser();
-//                    xmlParser.parserConfigFile(emvAppConfigParser, tmsXmlSerializer);
+                    xmlParser.parserConfigFile(emvAppConfigParser, tmsXmlSerializer);
                     EmvKeysConfigParser emvKeysConfigParser = new EmvKeysConfigParser();
-//                    xmlParser.parserConfigFile(emvKeysConfigParser, tmsXmlSerializer);
+                    xmlParser.parserConfigFile(emvKeysConfigParser, tmsXmlSerializer);
                     HostConfigParser hostConfigParser = new HostConfigParser();
-//                    xmlParser.parserConfigFile(hostConfigParser, tmsXmlSerializer);
+                    xmlParser.parserConfigFile(hostConfigParser, tmsXmlSerializer);
                     CardConfigParser cardConfigParser = new CardConfigParser();
-//                    xmlParser.parserConfigFile(cardConfigParser, tmsXmlSerializer);
+                    xmlParser.parserConfigFile(cardConfigParser, tmsXmlSerializer);
                     TerminalConfigParser terminalConfigParser = new TerminalConfigParser();
-//                    xmlParser.parserConfigFile(terminalConfigParser, tmsXmlSerializer);
+                    xmlParser.parserConfigFile(terminalConfigParser, tmsXmlSerializer);
                     QrParameterConfigParser qrParameterConfigParser = new QrParameterConfigParser();
                     xmlParser.parserConfigFile(qrParameterConfigParser, tmsXmlSerializer);
 
