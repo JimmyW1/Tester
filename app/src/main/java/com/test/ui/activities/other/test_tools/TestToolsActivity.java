@@ -134,8 +134,9 @@ public class TestToolsActivity extends BaseActivity implements View.OnClickListe
                     xmlParser.parserConfigFile(emvAppConfigParser, tmsXmlSerializer);
                     EmvKeysConfigParser emvKeysConfigParser = new EmvKeysConfigParser();
                     xmlParser.parserConfigFile(emvKeysConfigParser, tmsXmlSerializer);
-                    HostConfigParser hostConfigParser = new HostConfigParser();
-                    xmlParser.parserConfigFile(hostConfigParser, tmsXmlSerializer);
+                    // 注释掉的原因是Card解析的时候会先解析Host
+//                    HostConfigParser hostConfigParser = new HostConfigParser();
+//                    xmlParser.parserConfigFile(hostConfigParser, tmsXmlSerializer);
                     CardConfigParser cardConfigParser = new CardConfigParser();
                     xmlParser.parserConfigFile(cardConfigParser, tmsXmlSerializer);
                     TerminalConfigParser terminalConfigParser = new TerminalConfigParser();

@@ -65,15 +65,17 @@ public class Terminal {
         writeParameter(xml, index, tn, "ALLOW_UNLOCK_FORCE_SETTLEMENT",  "" + terminal.isUnlockForceSettlement);
         writeParameter(xml, index, tn, "IS_TRAINING_MODE",  "" + terminal.isTrainingMode);
         writeParameter(xml, index, tn, "IS_ISO_LOG_ON",  "" + terminal.isIsoLogOn);
-        writeParameter(xml, index, tn, "QR_AUTO_INQUIRY_TIMES",  "" + terminal.autoInquiryTimes);
+        // 此参数已经移动到QR里面了
+//        writeParameter(xml, index, tn, "QR_AUTO_INQUIRY_TIMES",  "" + terminal.autoInquiryTimes);
         writeParameter(xml, index, tn, "IS_AUTO_SETTLEMENT",  "" + terminal.isAutoSettlemnt);
         writeParameter(xml, index, tn, "AUTO_SETTLEMENT_TIME",  "" + terminal.autoSettlementTime);
         writeParameter(xml, index, tn, "RETRY_AUTO_SETTLE_INTERVAL_IN_MIN",  "" + terminal.autoSettlementFailedRetryTimeMins);
         writeParameter(xml, index, tn, "FORCE_SETTLEMENT_TIME",  "" + terminal.forceSettlementTime);
         writeParameter(xml, index, tn, "ALLOW_FORCE_SETTLEMENT",  "" + terminal.isForceSettlement);
-        writeParameter(xml, index, tn, "QR_INTERVAL_TIME",  "" + terminal.intervalTime);
-        writeParameter(xml, index, tn, "QR_INQUIRY_TIME",  "" + terminal.inquiryTime);
-        writeParameter(xml, index, tn, "QR_MANUAL_INQUIRY_TIME",  "" + terminal.manualInquiryTime);
+        // 下面三个参数已经移动到QR里面了
+//        writeParameter(xml, index, tn, "QR_INTERVAL_TIME",  "" + terminal.intervalTime);
+//        writeParameter(xml, index, tn, "QR_INQUIRY_TIME",  "" + terminal.inquiryTime);
+//        writeParameter(xml, index, tn, "QR_MANUAL_INQUIRY_TIME",  "" + terminal.manualInquiryTime);
         //ALIWECH_BSCANC_AUTO_INQUIRY_TIMES
         //ALIWECH_BSCANC_INQUIRY_TIME
         //QR_API_VERSION
